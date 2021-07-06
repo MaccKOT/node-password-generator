@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander');
-const chalk = require('chalk');
+const chalk = require('chalk'); // colored output
 const clipboardy = require('clipboardy'); //copy text to clipboard
 const createPassword = require('./utils/createPassword');
 const savePassword = require('./utils/savePassword');
@@ -32,6 +32,7 @@ const generatedPassword = createPassword(length, numbers, symbols);
 // Save to file
 if (save) {
   savePassword(generatedPassword);
+  console.log(chalk.green('Password saved to passwords.txt'));
 }
 
 // Copy to clipboard
